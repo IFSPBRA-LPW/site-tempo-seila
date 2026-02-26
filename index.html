@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Now</title>
+    <!-- conectei o google fonts pelo html, ao menos é oq diz o exemplo do google fonts mas eu nao to muito confiante, sei la-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- descobri isso nas ferias, nossa querida cloud flare disponibiliza o font awesome 
+     via link css, eu acho melhor que o padrao via JS, mas vai de gosto-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- css pro projeto ficar estiloso -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- tinha que ser em ingles igual do exmplo? eu entendo que é mais profisonal as variaveis, claasses e ids em ingles
+         mas ate os textos? vou por em portugues mesmo os textos, qualquer coisa eu mudo ok professora? -->
+        <header class="header">
+            <div class="logo">
+                <i class="fa-solid fa-sun icon-orange"></i>
+                <span>Weather Now</span>
+            </div>
+            <button class="units-btn">
+                <i class="fa-solid fa-gear"></i> Unidades <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+            </button>
+        </header>
+
+        <h1 class="main-title">Como o céu está parecendo hoje?</h1>
+
+        <div class="search-container">
+            <div class="search-input-wrapper">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Buscar por um local...">
+            </div>
+            <button class="search-btn">Buscar</button>
+        </div>
+
+        <!-- você chegou a ensinar main? eu estudei bastante durante as ferias, o main seria o ngc principal do site,
+         ate funcionaria com div, mas seria menos profissional  -->
+        <main class="main-content">
+
+            <div class="left-column">
+
+                <section class="main-card" aria-label="Clima Atual">
+                    <div class="main-card-content">
+                        <div class="main-card-left">
+                            <h2>rio de janeiro, brasil</h2>
+                            <p class="date">&infintie;</p>
+                        </div>
+                        <div class="main-card-right">
+                            <i class="fa-solid fa-sun weather-icon-large icon-yellow"></i>
+                            <span class="temperature">20&deg;</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="details-grid" aria-label="Detalhes do Clima">
+                    <div class="detail-card">
+                        <p class="detail-label">Sensação Térmica</p>
+                        <p class="detail-value">18&deg;</p>
+                    </div>
+                    <div class="detail-card">
+                        <p class="detail-label">Umidade</p>
+                        <p class="detail-value">46%</p>
+                    </div>
+                    <div class="detail-card">
+                        <p class="detail-label">Vento</p>
+                        <p class="detail-value">14 km/h</p>
+                    </div>
+                    <div class="detail-card">
+                        <p class="detail-label">Precipitação</p>
+                        <p class="detail-value">0 mm</p>
+                    </div>
+                </section>
+
+                <section class="daily-forecast">
+                    <h3 class="section-title">Previsão diária</h3>
+                    <div class="days-grid">
+                        <div class="day-card">
+                            <p class="day-name">Ter</p>
+                            <i class="fa-solid fa-cloud-showers-heavy icon-blue"></i>
+                            <div class="temps">
+                                <span class="high">20&deg;</span>
+                                <span class="low">14&deg;</span>
+                            </div>
+                        </div>
+                        <div class="day-card">
+                            <p class="day-name">Qua</p>
+                            <i class="fa-solid fa-cloud-showers-water icon-blue"></i>
+                            <div class="temps">
+                                <span class="high">21&deg;</span>
+                                <span class="low">15&deg;</span>
+                            </div>
+                        </div>
+                        <div class="day-card">
+                            <p class="day-name">Qui</p>
+                            <i class="fa-solid fa-sun icon-yellow"></i>
+                            <div class="temps">
+                                <span class="high">24&deg;</span>
+                                <span class="low">14&deg;</span>
+                            </div>
+                        </div>
+                        <div class="day-card">
+                            <p class="day-name">Sex</p>
+                            <i class="fa-solid fa-cloud-sun icon-yellow"></i>
+                            <div class="temps">
+                                <span class="high">25&deg;</span>
+                                <span class="low">13&deg;</span>
+                            </div>
+                        </div>
+                        <div class="day-card">
+                            <p class="day-name">Sáb</p>
+                            <i class="fa-solid fa-cloud-bolt icon-yellow"></i>
+                            <div class="temps">
+                                <span class="high">21&deg;</span>
+                                <span class="low">15&deg;</span>
+                            </div>
+                        </div>
+                        <div class="day-card">
+                            <p class="day-name">Dom</p>
+                            <i class="fa-solid fa-cloud icon-gray"></i>
+                            <div class="temps">
+                                <span class="high">25&deg;</span>
+                                <span class="low">16&deg;</span>
+                            </div>
+                        </div>
+                        <div class="day-card">
+                            <p class="day-name">Seg</p>
+                            <i class="fa-solid fa-wind icon-gray"></i>
+                            <div class="temps">
+                                <span class="high">24&deg;</span>
+                                <span class="low">15&deg;</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- aside é outra coisa que aprendi, seria parte do conteudo do principal (main), mas nao e o conteudo principal, é algo secundario-->
+            <aside class="right-column">
+                <section class="hourly-forecast">
+                    <div class="hourly-header">
+                        <h3 class="section-title">Previsão por hora</h3>
+                        <button class="day-select-btn">
+                            Terça-feira <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+
+                    <div class="hourly-list">
+                        <div class="hourly-item">
+                            <div class="time-weather">
+                                <i class="fa-solid fa-cloud icon-gray"></i>
+                                <span>15:00</span>
+                            </div>
+                            <span class="temp">20&deg;</span>
+                        </div>
+                        <div class="hourly-item">
+                            <div class="time-weather">
+                                <i class="fa-solid fa-cloud-sun icon-yellow"></i>
+                                <span>16:00</span>
+                            </div>
+                            <span class="temp">20&deg;</span>
+                        </div>
+                        <div class="hourly-item">
+                            <div class="time-weather">
+                                <i class="fa-solid fa-sun icon-yellow"></i>
+                                <span>17:00</span>
+                            </div>
+                            <span class="temp">20&deg;</span>
+                        </div>
+                        <div class="hourly-item">
+                            <div class="time-weather">
+                                <i class="fa-solid fa-cloud icon-gray"></i>
+                                <span>18:00</span>
+                            </div>
+                            <span class="temp">19&deg;</span>
+                        </div>
+                        <div class="hourly-item">
+                            <div class="time-weather">
+                                <i class="fa-solid fa-cloud-rain icon-gray"></i>
+                                <span>19:00</span>
+                            </div>
+                            <span class="temp">18&deg;</span>
+                        </div>
+                        <div class="hourly-item">
+                            <div class="time-weather">
+                                <i class="fa-solid fa-wind icon-gray"></i>
+                                <span>20:00</span>
+                            </div>
+                            <span class="temp">18&deg;</span>
+                        </div>
+                        <div class="hourly-item">
+                            <div class="time-weather">
+                                <i class="fa-solid fa-cloud-showers-heavy icon-gray"></i>
+                                <span>21:00</span>
+                            </div>
+                            <span class="temp">17&deg;</span>
+                        </div>
+                        <div class="hourly-item">
+                            <div class="time-weather">
+                                <i class="fa-solid fa-cloud icon-gray"></i>
+                                <span>22:00</span>
+                            </div>
+                            <span class="temp">17&deg;</span>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+
+        </main>
+    </div>
+</body>
+
+</html>

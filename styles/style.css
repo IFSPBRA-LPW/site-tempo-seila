@@ -1,5 +1,8 @@
 /* variaveis css para melhor organização, nao sei se voçe ensinou isso tambem, mas é bom pra organizar, fiz cinco variaveis so de teste */
 :root {
+    --main-background: #0b0a1e;
+    --main-text-color: #FFFFFF;
+    --accent-orange: #F97316;
     --accent-yellow: #FBBF24;
     --accent-blue: #60A5FA;
     --accent-gray: #D1D5DB;
@@ -19,7 +22,7 @@
 body {
     /* aqui vemos as variaveis em ação, o var(--variavel) e oq carrega eles */
     background-color: #0b0a1e;
-    color: #FFFFFF;
+    color: var(--main-text-color);
     font-family: var(--font-main);
     line-height: 1.5;
 }
@@ -31,7 +34,7 @@ body {
 }
 
 .icon-orange {
-    color: #F97316;
+    color: var(--accent-orange);
 }
 
 .icon-yellow {
@@ -67,7 +70,7 @@ body {
 
 .units-btn {
     background-color: #1D1E32;
-    color: #FFFFFF;
+    color: var(--main-text-color);
     border: none;
     padding: 0.625rem 1rem;
     border-radius: 0.625rem;
@@ -126,7 +129,7 @@ body {
     border: none;
     border-radius: 0.75rem;
     padding: 1rem 1.25rem 1rem 3.25rem;
-    color: #FFFFFF;
+    color: var(--main-text-color);
     font-family: inherit;
     font-size: 1.05rem;
     outline: none;
@@ -139,7 +142,7 @@ body {
 
 .search-btn {
     background-color: #4D56E7;
-    color: #FFFFFF;
+    color: var(--main-text-color);
     border: none;
     border-radius: 0.75rem;
     padding: 1rem 2.25rem;
@@ -293,7 +296,7 @@ body {
 
 .day-name {
     font-size: 0.95rem;
-    color: #FFFFFF;
+    color: var(--main-text-color);
     font-weight: 500;
 }
 
@@ -330,8 +333,8 @@ body {
 }
 
 .day-select-btn {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #FFFFFF;
+    background-color: #ffffff0d;
+    color: var(--main-text-color);
     border: none;
     padding: 0.5rem 0.875rem;
     border-radius: 0.625rem;

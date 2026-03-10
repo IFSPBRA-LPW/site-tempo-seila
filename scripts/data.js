@@ -1,26 +1,7 @@
-function dt(){
-    // o formato da data deve ser "Tuesday, Aug 5, 2025"
-
-    const data = new Date()
-
-    const diasemana = data.getDay()
-    let dianome
-
-    switch (diasemana){
-        case 0:
-            dianome = "domingo"
-            break
-
-    }
-
-    return dianome
-}
-
-console.log(dt())
 export const cityWeather = {
  city: "Berlim",
  country: "Germany",
- date: dt,
+ date: "Tuesday, Aug 5, 2025",
  icon: "☀",
  temperature: 20,
  feelsLike: 18,

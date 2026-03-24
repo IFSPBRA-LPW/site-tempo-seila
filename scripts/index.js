@@ -9,13 +9,13 @@ function renderBannerInfo(){
     `;
     const local = document.getElementsByClassName("main-card-left");
 
-    console.log(local[0]);
+    const temperatura = document.getElementsByClassName("temperature");
+
+    const image = document.getElementsByClassName("icone")
+
     local[0].innerHTML = nome_comleto;
-
-}
-
-function itemd() {
-
+    temperatura[0].innerHTML = dados.current.temp_c
+    image[0].innerHTML = `<img src=${dados.current.condition.icon} alt=${dados.current.condition.text}>`
 
 }
 
@@ -38,21 +38,76 @@ function  renderDayInfo() {
 function renderDaily() {
 
     const date0 = new Date(dados.forecast.forecastday[0].date)
-    
-    daysCard = document.getElementsByClassName("day-card");
+    const date1 = new Date(dados.forecast.forecastday[1].date)
+    const date2 = new Date(dados.forecast.forecastday[2].date)
+    const date3 = new Date(dados.forecast.forecastday[3].date)
+    const date4 = new Date(dados.forecast.forecastday[4].date)
+    const date5 = new Date(dados.forecast.forecastday[5].date)
+    const date6 = new Date(dados.forecast.forecastday[6].date)
 
-    daysCard[0] = `<p class="day-name">${dados.}</p>
-                            <i class="fa-solid fa-wind icon-gray"></i>
+    const dias = ["ter", "qua", "qui", "sex", "sab", "dom", "seg"]
+
+    let dia0 = dias[date0.getDay()]
+    let dia1 = dias[date1.getDay()]
+    let dia2 = dias[date2.getDay()]
+    let dia3 = dias[date3.getDay()]
+    let dia4 = dias[date4.getDay()]
+    let dia5 = dias[date5.getDay()]
+    let dia6 = dias[date6.getDay()]
+
+    
+    const daysCard = document.getElementsByClassName("day-card");
+    console.log(dados.forecast.forecastday[0].day.maxtemp_c)
+
+    daysCard[0].innerHTML = `<p class="day-name">${dia0}</p>
+                            <i class=icone><img src=${dados.forecast.forecastday[0].day.condition.icon}></i>
                             <div class="temps">
-                                <span class="high">24&deg;</span>
-                                <span class="low">15&deg;</span>
+                                <span class="high">${dados.forecast.forecastday[0].day.maxtemp_c}&deg;</span>
+                                <span class="low">${dados.forecast.forecastday[0].day.mintemp_c}&deg;</span>
+                            </div>
     `;
-    daysCard[1] =
-    daysCard[2] =
-    daysCard[3] =
-    daysCard[4] =
-    daysCard[5] =
-    daysCard[6] =
+    daysCard[1].innerHTML = `<p class="day-name">${dia1}</p>
+                            <i class="fa-solid fa-cloud-showers-heavy icon-blue"></i>
+                            <div class="temps">
+                                <span class="high">${dados.forecast.forecastday[1].day.maxtemp_c}&deg;</span>
+                                <span class="low">${dados.forecast.forecastday[1].day.mintemp_c}&deg;</span>
+                            </div>
+    `;
+    daysCard[2].innerHTML = `<p class="day-name">${dia2}</p>
+                            <i class="fa-solid fa-cloud-showers-heavy icon-blue"></i>
+                            <div class="temps">
+                                <span class="high">${dados.forecast.forecastday[2].day.maxtemp_c}&deg;</span>
+                                <span class="low">${dados.forecast.forecastday[2].day.mintemp_c}&deg;</span>
+                            </div>
+    `;
+   daysCard[3].innerHTML = `<p class="day-name">${dia3}</p>
+                            <i class="fa-solid fa-cloud-showers-heavy icon-blue"></i>
+                            <div class="temps">
+                                <span class="high">${dados.forecast.forecastday[3].day.maxtemp_c}&deg;</span>
+                                <span class="low">${dados.forecast.forecastday[3].day.mintemp_c}&deg;</span>
+                            </div>
+    `;
+   daysCard[4].innerHTML = `<p class="day-name">${dia4}</p>
+                            <i class="fa-solid fa-cloud-showers-heavy icon-blue"></i>
+                            <div class="temps">
+                                <span class="high">${dados.forecast.forecastday[4].day.maxtemp_c}&deg;</span>
+                                <span class="low">${dados.forecast.forecastday[4].day.mintemp_c}&deg;</span>
+                            </div>
+    `;
+   daysCard[5].innerHTML = `<p class="day-name">${dia5}</p>
+                            <i class="fa-solid fa-cloud-showers-heavy icon-blue"></i>
+                            <div class="temps">
+                                <span class="high">${dados.forecast.forecastday[5].day.maxtemp_c}&deg;</span>
+                                <span class="low">${dados.forecast.forecastday[5].day.mintemp_c}&deg;</span>
+                            </div>
+    `;
+   daysCard[6].innerHTML = `<p class="day-name">${dia6}</p>
+                            <i class="fa-solid fa-cloud-showers-heavy icon-blue"></i>
+                            <div class="temps">
+                                <span class="high">${dados.forecast.forecastday[6].day.maxtemp_c}&deg;</span>
+                                <span class="low">${dados.forecast.forecastday[6].day.mintemp_c}&deg;</span>
+                            </div>
+    `;
 
     
 }
@@ -65,6 +120,7 @@ function main() {
 
     renderBannerInfo();
     renderDayInfo();
+    renderDaily();
 
 }
 

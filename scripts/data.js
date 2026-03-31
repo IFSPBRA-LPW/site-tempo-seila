@@ -1,6 +1,6 @@
 import {API_KEY} from "./config.js";
 
-async function fetchWeather(city) { 
+export async function fetchWeather(city) { 
 const response = await fetch( 
 `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=7&lang=pt`, 
 ); 
@@ -9,6 +9,8 @@ throw new Error("Erro ao buscar dados da API");
 } 
 return response.json(); 
 } 
+
+
 
 export const data = fetchWeather("rio-de-janeiro")
 

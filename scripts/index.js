@@ -1,4 +1,5 @@
 import {data} from "./data.js";
+import { form } from "./validateForm.js";
 
 const dados = await data;
 console.log(dados);
@@ -113,7 +114,7 @@ function renderDaily() {
 }
 
 function renderHourly() {
-    hourlyData = dados.forecast.forecastday
+    const hourlyData = dados.forecast.forecastday
     const hourlyList = document.querySelector(".hourly-list");
     hourlyList.innerHTML = "";
 
@@ -145,6 +146,7 @@ function main() {
     renderDayInfo();
     renderDaily();
     renderHourly();
+    form();
 
 
 }

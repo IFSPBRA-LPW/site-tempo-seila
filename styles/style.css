@@ -7,6 +7,18 @@
     --accent-gray: #D1D5DB;
     --gradient-start: #3546eb;
     --gradient-end: #2d2a96;
+    --bg-secondary: #1D1E32;
+    --bg-secondary-hover: #262740;
+    --text-muted: #9ea0af;
+    --bg-btn-primary: #4D56E7;
+    --bg-btn-primary-hover: #3b44cd;
+    --bg-glass-light: #ffffff26;
+    --bg-glass-dim: #ffffff0d;
+    --text-glass: #ffffffbf;
+    --shadow-accent: #fbbf2466;
+    --bg-glass-hover: #ffffff0d;
+    --bg-glass-item: #ffffff08;
+
     /* por que duas fontes? a web le da direita pra esquerda, a primeira fonte é a do google que iremos usar
     a segunda é pra caso de merda, tipo o google fonts cair, ai ele usa o sans-serif que todo o computador ja tem baixada */
     --font-main: 'Poppins', sans-serif;
@@ -20,7 +32,7 @@
 
 body {
     /* aqui vemos as variaveis em ação, o var(--variavel) e oq carrega eles */
-    background-color: #0b0a1e;
+    background-color: var(--main-background);
     color: var(--main-text-color);
     font-family: var(--font-main);
     line-height: 1.5;
@@ -68,7 +80,7 @@ body {
 }
 
 .units-btn {
-    background-color: #1D1E32;
+    background-color: var(--bg-secondary);
     color: var(--main-text-color);
     border: none;
     padding: 0.625rem 1rem;
@@ -84,7 +96,7 @@ body {
 }
 
 .units-btn:hover {
-    background-color: #262740;
+    background-color: var(--bg-secondary-hover);
 }
 
 .dropdown-icon {
@@ -118,13 +130,13 @@ body {
 .search-icon {
     position: absolute;
     left: 1.125rem;
-    color: #9ea0af;
+    color: var(--text-muted);
     font-size: 1.1rem;
 }
 
 .search-input-wrapper input {
     width: 100%;
-    background-color: #1D1E32;
+    background-color: var(--bg-secondary);
     border: none;
     border-radius: 0.75rem;
     padding: 1rem 1.25rem 1rem 3.25rem;
@@ -135,12 +147,12 @@ body {
 }
 
 .search-input-wrapper input::placeholder {
-    color: #9ea0af;
+    color: var(--text-muted);
     font-weight: 400;
 }
 
 .search-btn {
-    background-color: #4D56E7;
+    background-color: var(--bg-btn-primary);
     color: var(--main-text-color);
     border: none;
     border-radius: 0.75rem;
@@ -153,7 +165,7 @@ body {
 }
 
 .search-btn:hover {
-    background-color: #3b44cd;
+    background-color: var(--bg-btn-primary-hover);
 }
 
 .main-content {
@@ -182,7 +194,7 @@ body {
     content: '';
     position: absolute;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--bg-glass-light);
 }
 
 .main-card::before {
@@ -199,7 +211,7 @@ body {
     top: -6.25rem;
     left: -3.125rem;
     filter: blur(2.5rem);
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-glass-dim);
 }
 
 .main-card-content {
@@ -218,7 +230,7 @@ body {
 }
 
 .main-card-left .date {
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--text-glass);
     font-size: 1rem;
 }
 
@@ -230,7 +242,7 @@ body {
 
 .weather-icon-large {
     font-size: 3.8rem;
-    filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.4));
+    filter: drop-shadow(0 0 15px var(--shadow-accent));
 }
 
 .temperature {
@@ -247,7 +259,7 @@ body {
 }
 
 .detail-card {
-    background-color: #1D1E32;
+    background-color: var(--bg-secondary);
     border-radius: 1rem;
     padding: 1.5rem 1.25rem;
     display: flex;
@@ -256,7 +268,7 @@ body {
 }
 
 .detail-label {
-    color: #9ea0af;
+    color: var(--text-muted);
     font-size: 0.95rem;
     font-weight: 400;
 }
@@ -284,7 +296,7 @@ body {
 }
 
 .day-card {
-    background-color: #1D1E32;
+    background-color: var(--bg-secondary);
     border-radius: 1rem;
     padding: 1.25rem 0.75rem;
     display: flex;
@@ -311,11 +323,11 @@ body {
 }
 
 .temps .low {
-    color: #9ea0af;
+    color: var(--text-muted);
 }
 
 .hourly-forecast {
-    background-color: #1D1E32;
+    background-color: var(--bg-secondary);
     border-radius: 1.25rem;
     padding: 1.75rem 1.5rem;
 }
@@ -332,7 +344,7 @@ body {
 }
 
 .day-select-btn {
-    background-color: #ffffff0d;
+    background-color: var(--bg-glass-hover);
     color: var(--main-text-color);
     border: none;
     padding: 0.5rem 0.875rem;
@@ -357,7 +369,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.25rem;
-    background-color: #ffffff08;
+    background-color: var(--bg-glass-item);
     border-radius: 1rem;
 }
 
@@ -368,9 +380,15 @@ body {
 }
 
 .time-weather i {
-    font-size: 1.25rem;
-    width: 1.5rem;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.8rem;
+}
+
+.time-weather img {
+    width: 100%;
+    height: auto;
 }
 
 .time-weather span {

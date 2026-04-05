@@ -1,13 +1,15 @@
 import { fetchWeather } from "./data.js"
 
-export function form() {
-    input = document.getElementById("input")
-    button = document.getElementById("search-btn")
+export function form(onSearchSuccess) {
+    const input = document.getElementById("input")
+    const button = document.getElementById("search-btn")
 
-    button.addEventListener('click', () =>{
+    button.addEventListener('click', async () => {
 
         const search = input.value.trim()
-        fetchWeather(search)
-    }
-    )
+        if (search) {
+            const newData = await fetchWeather(search)
+            onSearchSuccess(newData)
+        }
+    })
 }

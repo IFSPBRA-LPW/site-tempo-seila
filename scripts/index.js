@@ -1,7 +1,7 @@
 import {data} from "./data.js";
 import { form } from "./validateForm.js";
 
-const dados = await data;
+let dados = await data;
 console.log(dados);
 function renderBannerInfo(){
 
@@ -124,7 +124,7 @@ function renderHourly() {
         const hourlyItem = document.createElement("div");
         hourlyItem.classList.add("hourly-item");
 
-        const time = getHour(hourInfo.time);
+        const time = hourInfo.time.split(' ')[1];
         const temp = Math.round(hourInfo.temp_c);
         const iconSrc = hourInfo.condition.icon;
 
@@ -146,7 +146,13 @@ function main() {
     renderDayInfo();
     renderDaily();
     renderHourly();
-    form();
+    form((novosDados) => {
+        dados = novosDados;
+        renderBannerInfo();
+        renderDayInfo();
+        renderDaily();
+        renderHourly();
+    });
 
 
 }
